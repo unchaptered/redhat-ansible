@@ -15,4 +15,10 @@ RUN sudo apt install ansible -y
 
 WORKDIR /redhat-ansible
 
+ARG TARGET_VALUE
+
 COPY . .
+
+RUN cd /redhat-ansible
+RUN chmod 400 *.pem
+RUN sh inventory.sh $TARGET_VALUE
