@@ -21,3 +21,4 @@ COPY . .
 
 RUN cd /redhat-ansible
 RUN chmod 400 *.pem
+RUN sh -c '/redhat-ansible/inventory.sh "$TARGET_VALUE"'
