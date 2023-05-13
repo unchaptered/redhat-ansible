@@ -24,6 +24,19 @@ ansible target1 -m ping -i inventory.txt --private-key <EC2 PEM 키 주소(절�
 yes
 ```
 
+## Clean up
+
+```sh
+# Stop all containers
+docker stop $(docker ps -a -q)
+
+# Remove all containers
+docker rm $(docker ps -a -q)
+
+# Remove all images
+docker rmi $(docker images -q) 
+```
+
 ## PING 보낼 때마다, YES 입력해야 하는 이슈
 
 /etc/ansible/ansible.cfg 파일에서 아래 구문 활성화
