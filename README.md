@@ -1,25 +1,17 @@
 # Redhat Ansible
 
-## Get Started
+Windows 11 운영체제에서 Docker를 이용해서 Ansible을 사용하기 위한 셋업 프로젝트입니다.
 
-### Ansible Inventory 실행하는 법
+- Inventory [open](./inventory/README.md)
+- playbook [open](./playbook/README.md)
 
-1. 도커 이미지 빌드
+Hyper-V가 지원되는 Windows 운영체제에서 사용가능합니다.
 
-```
-docker build --build-arg TARGET_VALUE=<Public 아이피> -t redhat-ansible .
-```
+아래는 사용 중인 종속성 버전입니다.
 
-2. 도커 이미지 실행
-
-```
-docker run --env-file .docker.env -t -i redhat-ansible
+```raw
+Windows version 11 (build 21H2)
+Docker version 20.10.23 (build 7155243)
 ```
 
-3. ansible ping 실행
-
-```
-cd /etc/ansible
-ansible target1 -m ping -i inventory.txt --private-key <EC2 PEM 키 주소(절대주소)> -u <EC2 유저 이름>
-yes
-```
+개인 컴퓨터에 Ansible을 설치하기 싫은 분들이 사용하시면 될 것 같습니다.
